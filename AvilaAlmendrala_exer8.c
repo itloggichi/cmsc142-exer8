@@ -2,7 +2,10 @@
 	Exercise: Vertex Coloring
 	1. Complete the basic greedy coloring program below.
 	2. Analyze the running time of the program.
-	3. Improve the quality of your solution by determining a good starting vertex.
+		In analyzing the running time of the program, the loop that assigns a color to each vertex iterates through the number of vertices or O(|V|). A function inside of the said loop, getAvailableColor,
+		creates an availability array of size v and assigns all initial availablity to 1, which is also O(|V|). After creating the availability array, the function iterates through the linked list of the
+		current vertex and marks the colors of the adjacent vertices as unavailable. There is a following loop that iterates through the availability array and gets the smallest available color, which is O(|V|).
+		Therefore, the running time of the program is O(V^2), since there is a loop that runs |V| times inside of the loop that also runs |V| times in the greedy algorithm.
 */
 
 #include<stdio.h>
